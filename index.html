@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    let myHeaders = new Headers({
+        'Accept': '*/*',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+        'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjA1NSwiaWF0IjoxNjczNzY2NTg1LCJleHAiOjE3MDUyMTYxODV9.MDl5ep85dKP3_J7-6kci4-XYfNMcjhvKaRWQqKZeNrw',
+        'Connection': 'keep-alive',
+        'content-type': 'application/json',
+        'Cookie': '_ga=GA1.1.1459277979.1661996390; G_ENABLED_IDPS=google; jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjA1NSwiaWF0IjoxNjczNzY2NTg1LCJleHAiOjE3MDUyMTYxODV9.MDl5ep85dKP3_J7-6kci4-XYfNMcjhvKaRWQqKZeNrw; _ga_QC76Y27GM4=GS1.1.1676781109.15.1.1676781807.0.0.0',
+        'DNT': '1',
+        'Host': 'curius.app',
+        'If-None-Match': 'W/"19e1c-wpeMdxQR8vOjHgVCFTQYsEZZdEY"',
+        'Referer': 'https://curius.app/',
+        'sec-ch-ua': '"Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"macOS"',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
+     });
+     const myInit = {
+        method: 'GET',
+        headers: myHeaders,
+        mode: 'cors',
+        cahce: 'default'
+     }
+     const api_url = 'http://localhost:8080/https://curius.app/api/users/2055/links?page=0';
+     const myRequest = new Request(api_url, myInit);
+     async function getData() {
+        const response = await fetch(myRequest);
+        const data = await response.json();
+        console.log(data);
+     }
+     getData();
+  </script>
+</body>
+
+</html>
